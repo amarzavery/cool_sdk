@@ -1,0 +1,38 @@
+projects/*
+targets/*
+packages/*
+
+# Visual Studio #
+*.suo
+*.user
+.ntvs_analysis.dat
+obj/*
+
+# Node #
+npm-debug.log
+azure_error
+checkstyle-result.xml
+test-result.xml
+
+# Mac OS #
+.DS_Store
+.DS_Store?
+
+# Windows #
+Thumbs.db
+
+# Credentials #
+*.cer
+*.pfx
+*.pem
+
+# WebStorm #
+.idea/
+
+# docs #
+docs/
+main.conf.json
+child.conf.json
+
+# temporary test artifacts
+test/tmp/*
