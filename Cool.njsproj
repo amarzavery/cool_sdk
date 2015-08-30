@@ -290,6 +290,11 @@
     <Compile Include="test\util\util-tests.js" />
     <Compile Include="test\util\util.js" />
     <Compile Include="test\util\validate-tests.js" />
+    <Content Include=".gitignore" />
+    <Content Include=".jshintignore" />
+    <Content Include=".jshintrc" />
+    <Content Include=".npmignore" />
+    <Content Include="generate.cmd" />
     <Content Include="lib\services\resourceManagement\generate.cmd" />
     <Content Include="lib\services\resourceManagement\generateAuthorization.cmd" />
     <Content Include="lib\services\resourceManagement\generateFeature.cmd" />
