@@ -113,7 +113,7 @@ describe('Storage Management', function () {
       client.storageAccounts.list(function (err, result, request, response) {
         should.not.exist(err);
         response.statusCode.should.equal(200);
-        var accounts = result.storageAccounts;
+        var accounts = result;
         accounts.length.should.be.above(0);
         //accounts.some(function (ac) { return ac.name === accountName }).should.be.true;
         done();
