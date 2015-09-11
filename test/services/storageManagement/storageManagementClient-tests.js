@@ -91,7 +91,7 @@ describe('Storage Management', function () {
       client.storageAccounts.create(groupName, accountName, createParameters, function (err, result, request, response) {
         should.not.exist(err);
         should.exist(result);
-        //response.statusCode.should.equal(200);
+        response.statusCode.should.equal(200);
         done();
       });
     });
