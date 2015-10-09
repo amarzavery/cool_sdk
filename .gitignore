@@ -35,4 +35,4 @@ main.conf.json
 child.conf.json
 
 # temporary test artifacts
-test/tmp/*
+

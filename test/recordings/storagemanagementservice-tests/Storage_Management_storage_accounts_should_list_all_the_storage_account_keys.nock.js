@@ -8,36 +8,36 @@ exports.setEnvironment = function() {
 exports.scopes = [[function (nock) { 
 var result = 
 nock('http://management.azure.com:443')
-  .post('/subscriptions/3ca49042-782a-4cc9-89b5-ee1b487fe115/resourceGroups/nodeTestGroup4662/providers/Microsoft.Storage/storageAccounts/testacc1561/listKeys?api-version=2015-05-01-preview')
-  .reply(200, "{\"key1\":\"feOtd1R3yAzZEhESalD7nApMAhrRS8MYmYXSMo3cGqgJq7Zz99bi2I2peimO4L9fMraIVBbr037JMYjKrDemzw==\",\"key2\":\"pFBrlM254qznIXRofMamXsCTLCiMI8ltc3JW2EnNBJf4NKFUbifqG5ArbClqZv9ZBRMvScyFjb561Is38bUUJQ==\"}", { 'cache-control': 'no-cache',
+  .post('/subscriptions/3ca49042-782a-4cc9-89b5-ee1b487fe115/resourceGroups/nodeTestGroup3593/providers/Microsoft.Storage/storageAccounts/testacc6158/listKeys?api-version=2015-05-01-preview')
+  .reply(200, "{\"key1\":\"PPArCHzsxJAilnjdrT7Au0xXjcWaXMdI96Jbha7tip5M6FjM3Lafwm8QXJgLXWDzfuMprwKHiP2yqY6iW0SCxA==\",\"key2\":\"drBsmjCy14yPlvJRCm2oL5nIij0nwnxATZ5AwSR9hVU8sdDgoOpusgzbapbzI93y/cL8UhWyJqjdNcSxhuIaEg==\"}\n", { 'cache-control': 'no-cache',
   pragma: 'no-cache',
-  'content-length': '197',
-  'content-type': 'application/json; charset=utf-8',
+  'content-length': '198',
+  'content-type': 'application/json',
   expires: '-1',
-  'x-ms-request-id': 'fd42645f-d3f3-4b39-b146-a3097deccafe',
-  server: 'Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0',
-  'x-ms-ratelimit-remaining-subscription-writes': '1190',
-  'x-ms-correlation-request-id': '11504500-6a6b-4089-949a-9d333f0b85ad',
-  'x-ms-routing-request-id': 'EASTUS:20150817T072812Z:11504500-6a6b-4089-949a-9d333f0b85ad',
+  'x-ms-request-id': '44878377-1796-4596-a6ea-6026bab3af2d',
+  server: 'Microsoft-HTTPAPI/2.0',
+  'x-ms-ratelimit-remaining-subscription-writes': '1198',
+  'x-ms-correlation-request-id': '44878377-1796-4596-a6ea-6026bab3af2d',
+  'x-ms-routing-request-id': 'WESTUS:20151009T025302Z:44878377-1796-4596-a6ea-6026bab3af2d',
   'strict-transport-security': 'max-age=31536000; includeSubDomains',
-  date: 'Mon, 17 Aug 2015 07:28:12 GMT',
+  date: 'Fri, 09 Oct 2015 02:53:01 GMT',
   connection: 'close' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.azure.com:443')
-  .post('/subscriptions/3ca49042-782a-4cc9-89b5-ee1b487fe115/resourceGroups/nodeTestGroup4662/providers/Microsoft.Storage/storageAccounts/testacc1561/listKeys?api-version=2015-05-01-preview')
-  .reply(200, "{\"key1\":\"feOtd1R3yAzZEhESalD7nApMAhrRS8MYmYXSMo3cGqgJq7Zz99bi2I2peimO4L9fMraIVBbr037JMYjKrDemzw==\",\"key2\":\"pFBrlM254qznIXRofMamXsCTLCiMI8ltc3JW2EnNBJf4NKFUbifqG5ArbClqZv9ZBRMvScyFjb561Is38bUUJQ==\"}", { 'cache-control': 'no-cache',
+  .post('/subscriptions/3ca49042-782a-4cc9-89b5-ee1b487fe115/resourceGroups/nodeTestGroup3593/providers/Microsoft.Storage/storageAccounts/testacc6158/listKeys?api-version=2015-05-01-preview')
+  .reply(200, "{\"key1\":\"PPArCHzsxJAilnjdrT7Au0xXjcWaXMdI96Jbha7tip5M6FjM3Lafwm8QXJgLXWDzfuMprwKHiP2yqY6iW0SCxA==\",\"key2\":\"drBsmjCy14yPlvJRCm2oL5nIij0nwnxATZ5AwSR9hVU8sdDgoOpusgzbapbzI93y/cL8UhWyJqjdNcSxhuIaEg==\"}\n", { 'cache-control': 'no-cache',
   pragma: 'no-cache',
-  'content-length': '197',
-  'content-type': 'application/json; charset=utf-8',
+  'content-length': '198',
+  'content-type': 'application/json',
   expires: '-1',
-  'x-ms-request-id': 'fd42645f-d3f3-4b39-b146-a3097deccafe',
-  server: 'Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0',
-  'x-ms-ratelimit-remaining-subscription-writes': '1190',
-  'x-ms-correlation-request-id': '11504500-6a6b-4089-949a-9d333f0b85ad',
-  'x-ms-routing-request-id': 'EASTUS:20150817T072812Z:11504500-6a6b-4089-949a-9d333f0b85ad',
+  'x-ms-request-id': '44878377-1796-4596-a6ea-6026bab3af2d',
+  server: 'Microsoft-HTTPAPI/2.0',
+  'x-ms-ratelimit-remaining-subscription-writes': '1198',
+  'x-ms-correlation-request-id': '44878377-1796-4596-a6ea-6026bab3af2d',
+  'x-ms-routing-request-id': 'WESTUS:20151009T025302Z:44878377-1796-4596-a6ea-6026bab3af2d',
   'strict-transport-security': 'max-age=31536000; includeSubDomains',
-  date: 'Mon, 17 Aug 2015 07:28:12 GMT',
+  date: 'Fri, 09 Oct 2015 02:53:01 GMT',
   connection: 'close' });
  return result; }]];
