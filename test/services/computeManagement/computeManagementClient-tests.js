@@ -22,8 +22,8 @@ var msRestAzure = require('ms-rest-azure');
 var testutil = require('../../util/util');
 var SuiteBase = require('../../framework/suite-base');
 var FileTokenCache = require('../../../lib/util/fileTokenCache');
-var StorageManagementClient = require('../../../lib/services/storageManagement2/lib/storageManagementClient');
-var testPrefix = 'storagemanagementservice-tests';
+var ComputeManagementClient = require('../../../lib/services/computeManagement2/lib/computeManagementClient');
+var testPrefix = 'computemanagementservice-tests';
 var groupPrefix = 'nodeTestGroup';
 var accountPrefix = 'testacc';
 var createdGroups = [];
@@ -41,7 +41,7 @@ var acclocation;
 var accType;
 var createParameters;
 
-describe('Storage Management', function () {
+describe('Compute Management', function () {
   
   before(function (done) {
     suite = new SuiteBase(this, testPrefix, requiredEnvironment);
@@ -103,7 +103,7 @@ describe('Storage Management', function () {
         response.statusCode.should.equal(200);
         var account = result;
         account.name.should.equal(accountName);
-        account.location.should.equal("westus");
+        account.location.should.equal(acclocation);
         account.type.should.equal('Microsoft.Storage/storageAccounts');
         done();
       });
@@ -114,7 +114,7 @@ describe('Storage Management', function () {
         should.not.exist(err);
         should.exist(result);
         response.statusCode.should.equal(200);
-        var accounts = result;
+        var accounts = result.value;
         accounts.length.should.be.above(0);
         accounts.some(function (ac) { return ac.name === accountName }).should.be.true;
         done();
@@ -126,7 +126,7 @@ describe('Storage Management', function () {
         should.not.exist(err);
         should.exist(result);
         response.statusCode.should.equal(200);
-        var accounts = result;
+        var accounts = result.value;
         accounts.length.should.be.above(0);
         accounts.some(function (ac) { return ac.name === accountName }).should.be.true;
         done();
@@ -151,7 +151,7 @@ describe('Storage Management', function () {
         should.exist(result);
         response.statusCode.should.equal(200);
         var keys = result;
-        client.storageAccounts.regenerateKey(groupName, accountName, 'key1', function (err, result, request, response) {
+        client.storageAccounts.regenerateKey(groupName, accountName, { keyName: 'key1' }, function (err, result, request, response) {
           should.not.exist(err);
           should.exist(result);
           response.statusCode.should.equal(200);

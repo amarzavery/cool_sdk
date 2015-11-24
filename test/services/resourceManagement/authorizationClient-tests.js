@@ -78,38 +78,36 @@ describe('Authorization Client', function () {
     var lockLevel = 'CanNotDelete';
     it('should work for all operations possible', function (done) {
       var lockParameters = {
-        properties: {
           level: lockLevel,
           notes: 'Optional text.'
-        }
       };
       client.managementLocks.createOrUpdateAtResourceGroupLevel(groupName, lockName, lockParameters, function (err, result) {
         should.not.exist(err);
-        should.exist(result.body);
+        should.exist(result);
         client.managementLocks.get(lockName, function (error, result) {
           //should.not.exist(err);
-          //should.exist(result.body);
-          client.managementLocks.listAtResourceGroupLevel(groupName, { properties: { level: lockLevel } }, function (err, result) {
+          //should.exist(result);
+          client.managementLocks.listAtResourceGroupLevel(groupName, { properties: { level: lockLevel } }, function (err, result, request, response) {
             should.not.exist(err);
-            should.exist(result.body);
-            result.response.statusCode.should.equal(200);
-            var locks = result.body.value;
+            should.exist(result);
+            response.statusCode.should.equal(200);
+            var locks = result;
             locks.length.should.be.above(0);
             locks.some(function (item) {
               return item.name.should.equal(lockName);
             }).should.be.true;
-            client.managementLocks.listAtSubscriptionLevel(null, function (err, result) {
+            client.managementLocks.listAtSubscriptionLevel(null, function (err, result, request, response) {
               should.not.exist(err);
-              should.exist(result.body);
-              result.response.statusCode.should.equal(200);
-              var locks = result.body.value;
+              should.exist(result);
+              response.statusCode.should.equal(200);
+              var locks = result;
               locks.length.should.be.above(0);
               locks.some(function (item) {
                 return item.name.should.equal(lockName);
               }).should.be.true;
-              client.managementLocks.deleteAtResourceGroupLevel(groupName, lockName, function (err, result) {
+              client.managementLocks.deleteAtResourceGroupLevel(groupName, lockName, function (err, result, request, response) {
                 should.not.exist(err);
-                result.response.statusCode.should.equal(200);
+                response.statusCode.should.equal(200);
                 done();
               });
             });
